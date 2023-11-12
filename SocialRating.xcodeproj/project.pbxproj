@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F2C8EC62B016B1700312B9B /* PasswordRecoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2C8EC52B016B1600312B9B /* PasswordRecoveryView.swift */; };
 		2FF8E4CA2AFFB0890055B7AA /* SocialRatingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF8E4C92AFFB0890055B7AA /* SocialRatingApp.swift */; };
 		2FF8E4CC2AFFB0890055B7AA /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF8E4CB2AFFB0890055B7AA /* MainView.swift */; };
 		2FF8E4CE2AFFB08B0055B7AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FF8E4CD2AFFB08B0055B7AA /* Assets.xcassets */; };
@@ -60,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F2C8EC52B016B1600312B9B /* PasswordRecoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryView.swift; sourceTree = "<group>"; };
 		2FF8E4C62AFFB0890055B7AA /* SocialRating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialRating.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FF8E4C92AFFB0890055B7AA /* SocialRatingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialRatingApp.swift; sourceTree = "<group>"; };
 		2FF8E4CB2AFFB0890055B7AA /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				2FF8E5292AFFFD7F0055B7AA /* ScreensaverView.swift */,
 				2FF8E4CB2AFFB0890055B7AA /* MainView.swift */,
 				2FF8E4F72AFFE1DD0055B7AA /* InputView.swift */,
+				2F2C8EC52B016B1600312B9B /* PasswordRecoveryView.swift */,
 				2FF8E4F92AFFE2160055B7AA /* RegistrationView.swift */,
 				2FF8E4FB2AFFE2D30055B7AA /* MasterStudentView.swift */,
 				2FF8E4FD2AFFE3270055B7AA /* MasterTeacherView.swift */,
@@ -387,6 +390,7 @@
 				2FF8E5282AFFF85E0055B7AA /* ProfileChangesViewModels.swift in Sources */,
 				2FF8E5222AFFF7F30055B7AA /* SearchStudentsViewModels.swift in Sources */,
 				2FF8E5142AFFE8240055B7AA /* InputViewModel.swift in Sources */,
+				2F2C8EC62B016B1700312B9B /* PasswordRecoveryView.swift in Sources */,
 				2FF8E51A2AFFE8620055B7AA /* MasterTeacherViewModel.swift in Sources */,
 				2FF8E5082AFFE4AB0055B7AA /* SearchStudentsView.swift in Sources */,
 				2FF8E51E2AFFF7C20055B7AA /* ProfileViewModel.swift in Sources */,

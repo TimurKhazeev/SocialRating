@@ -23,7 +23,7 @@ struct ScreensaverView: View {
       
       VStack {
         VStack {
-          Image("logoRed")
+          Image("logoScarlet")
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: 350, height: 350)
