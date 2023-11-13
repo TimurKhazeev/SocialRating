@@ -10,7 +10,7 @@ import SwiftUI
 
 struct InputView: View {
   
-  @State var name = ""
+  @State var mail = ""
   @State var password = ""
   
   var body: some View {
@@ -42,61 +42,52 @@ struct InputView: View {
               .bold()
             Spacer()
           }
-          .padding(.horizontal, 25)
           .padding(.top, 50)
           
-          // Title Email
+          // Slot Email
           VStack {
             HStack{
               Text("Email")
               Spacer()
             }
-            .padding(.horizontal, 25)
             .padding(.top, 5)
             
-            // Field for mail
-            TextField("Введите Email", text: $name)
+            TextField("Введите Email", text: $mail)
               .textFieldStyle(RoundedBorderTextFieldStyle())
-              .padding()
             
-            // Title password
+            // Slot password
             HStack{
               Text("Пароль")
               Spacer()
             }
-            .padding(.horizontal, 25)
             .padding(.top, 5)
             
-            // Field for the password
             SecureField("Введите пароль", text: $password)
               .textFieldStyle(RoundedBorderTextFieldStyle())
-              .padding()
+            
           }
         }
         
         // Transition to password recovery
         VStack {
-            NavigationLink("Забыли пароль?", destination: PasswordRecoveryView())
-              .foregroundColor(.gray)
+          NavigationLink("Забыли пароль?", destination: PasswordRecoveryView().navigationBarBackButtonHidden(true))
+            .foregroundColor(.gray)
         }
         .padding()
         
         // Login button
-        VStack{
+        VStack {
           Button(action: {
             // Действие, которое нужно выполнить при нажатии на кнопку
           }) {
-            ZStack {
-              Text("Войти")
-                .font(.system(size: 30))
-                .foregroundColor(.white)
-                .bold()
-            }
+            Text("Войти")
+              .font(.system(size: 30))
+              .foregroundColor(.white)
+              .bold()
           }
-          .frame(minWidth: 0, maxWidth: .infinity)
+          .frame(width: 373, height: 50)
           .background(Color.scarlet)
           .clipShape(RoundedRectangle(cornerRadius: 15))
-          .padding(.horizontal, 25)
           
           Spacer()
         }
@@ -107,18 +98,19 @@ struct InputView: View {
             Text("У вас ещё нет аккаунта?")
               .foregroundColor(.gray)
             
-            NavigationLink("Создать аккаунт", destination: RegistrationView())
+            NavigationLink("Создать аккаунт", destination: RegistrationView().navigationBarBackButtonHidden(true))
               .foregroundColor(.scarlet)
           }
         }
         .padding(.bottom, 75)
         
       }
+      .padding(.horizontal, 10)
     }
     
   }
 }
 
 #Preview {
-    InputView()
+  InputView()
 }
