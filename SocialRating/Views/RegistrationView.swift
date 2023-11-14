@@ -4,12 +4,14 @@
 //
 //  Created by Тимур Хазеев on 11.11.2023.
 //
+// Страница регистрации
 
 import SwiftUI
 
 struct RegistrationView: View {
   
   @Environment(\.presentationMode) var presentationMode
+  
   @State var name = ""
   @State var surname = ""
   @State var patronymic = ""
@@ -19,6 +21,12 @@ struct RegistrationView: View {
   @State var phone = ""
   @State var password = ""
   @State var passwordRepeat = ""
+  @State private var selectedRole: Role = .student
+  
+  enum Role {
+    case student
+    case teacher
+  }
   
   var body: some View {
     VStack {
@@ -37,7 +45,7 @@ struct RegistrationView: View {
       }
       .padding(.top, 15)
       
-      // Registration form
+      // Registration block
       VStack{
         
         // Title enter
@@ -50,10 +58,32 @@ struct RegistrationView: View {
         }
         .padding(.top, 25)
         
-        // Student or teacher
-        
-        
+        // Registration form
         ScrollView{
+          // Student and teacher selection buttons
+          HStack {
+            Button(action: {
+              selectedRole = .student
+            }) {
+              Image(systemName: "record.circle")
+                .foregroundColor(selectedRole == .student ? Color.scarlet : Color.gray)
+              
+              Text("Студент")
+                .foregroundColor(selectedRole == .student ? Color.black : Color.gray)
+            }
+            .padding()
+            
+            Button(action: {
+              selectedRole = .teacher
+            }) {
+              Image(systemName: "record.circle")
+                .foregroundColor(selectedRole == .teacher ? Color.scarlet : Color.gray)
+              
+              Text("Преподаватель")
+                .foregroundColor(selectedRole == .teacher ? Color.black : Color.gray)
+            }
+            .padding()
+          }
           
           // Slot name
           HStack{
