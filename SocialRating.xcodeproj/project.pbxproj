@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F2C8EC62B016B1700312B9B /* PasswordRecoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2C8EC52B016B1600312B9B /* PasswordRecoveryView.swift */; };
+		2F3951862B0575C100F186EC /* SRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3951852B0575C100F186EC /* SRButton.swift */; };
 		2FF8E4CA2AFFB0890055B7AA /* SocialRatingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF8E4C92AFFB0890055B7AA /* SocialRatingApp.swift */; };
 		2FF8E4CC2AFFB0890055B7AA /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF8E4CB2AFFB0890055B7AA /* MainView.swift */; };
 		2FF8E4CE2AFFB08B0055B7AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FF8E4CD2AFFB08B0055B7AA /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 
 /* Begin PBXFileReference section */
 		2F2C8EC52B016B1600312B9B /* PasswordRecoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryView.swift; sourceTree = "<group>"; };
+		2F3951852B0575C100F186EC /* SRButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRButton.swift; sourceTree = "<group>"; };
 		2FF8E4C62AFFB0890055B7AA /* SocialRating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialRating.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FF8E4C92AFFB0890055B7AA /* SocialRatingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialRatingApp.swift; sourceTree = "<group>"; };
 		2FF8E4CB2AFFB0890055B7AA /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				2FF8E5072AFFE4AB0055B7AA /* SearchStudentsView.swift */,
 				2FF8E5092AFFE4F40055B7AA /* StudentsPageView.swift */,
 				2FF8E50B2AFFE5360055B7AA /* TransferPointsView.swift */,
+				2F3951852B0575C100F186EC /* SRButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 			files = (
 				2FF8E5022AFFE3C90055B7AA /* ProfileView.swift in Sources */,
 				2FF8E5162AFFE8360055B7AA /* RegistrationViewModel.swift in Sources */,
+				2F3951862B0575C100F186EC /* SRButton.swift in Sources */,
 				2FF8E4FC2AFFE2D30055B7AA /* MasterStudentView.swift in Sources */,
 				2FF8E4F82AFFE1DD0055B7AA /* InputView.swift in Sources */,
 				2FF8E5042AFFE3DE0055B7AA /* ProfileChangesView.swift in Sources */,

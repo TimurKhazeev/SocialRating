@@ -11,22 +11,7 @@ import SwiftUI
 struct RegistrationView: View {
   
   @Environment(\.presentationMode) var presentationMode
-  
-  @State var name = ""
-  @State var surname = ""
-  @State var patronymic = ""
-  @State var faculty = ""
-  @State var group = ""
-  @State var mail = ""
-  @State var phone = ""
-  @State var password = ""
-  @State var passwordRepeat = ""
-  @State private var selectedRole: Role = .student
-  
-  enum Role {
-    case student
-    case teacher
-  }
+  @StateObject var viewModel = RegistrationViewModel()
   
   var body: some View {
     VStack {
@@ -58,29 +43,35 @@ struct RegistrationView: View {
         }
         .padding(.top, 25)
         
+        // Error Message
+        if !viewModel.errorMessage.isEmpty {
+          Text(viewModel.errorMessage)
+            .foregroundColor(.blue)
+        }
+        
         // Registration form
         ScrollView{
           // Student and teacher selection buttons
           HStack {
             Button(action: {
-              selectedRole = .student
+              viewModel.selectedRole = .student
             }) {
               Image(systemName: "record.circle")
-                .foregroundColor(selectedRole == .student ? Color.scarlet : Color.gray)
+                .foregroundColor(viewModel.selectedRole == .student ? Color.scarlet : Color.gray)
               
               Text("Студент")
-                .foregroundColor(selectedRole == .student ? Color.black : Color.gray)
+                .foregroundColor(viewModel.selectedRole == .student ? Color.black : Color.gray)
             }
             .padding()
             
             Button(action: {
-              selectedRole = .teacher
+              viewModel.selectedRole = .teacher
             }) {
               Image(systemName: "record.circle")
-                .foregroundColor(selectedRole == .teacher ? Color.scarlet : Color.gray)
+                .foregroundColor(viewModel.selectedRole == .teacher ? Color.scarlet : Color.gray)
               
               Text("Преподаватель")
-                .foregroundColor(selectedRole == .teacher ? Color.black : Color.gray)
+                .foregroundColor(viewModel.selectedRole == .teacher ? Color.black : Color.gray)
             }
             .padding()
           }
@@ -92,8 +83,9 @@ struct RegistrationView: View {
           }
           .padding(.top, 5)
           
-          TextField("Введите имя", text: $name)
+          TextField("Введите имя", text: $viewModel.registrationData.name)
             .textFieldStyle(RoundedBorderTextFieldStyle())
+            .autocorrectionDisabled(true)
           
           // Slot surname
           HStack{
@@ -102,8 +94,9 @@ struct RegistrationView: View {
           }
           .padding(.top, 5)
           
-          TextField("Введите фамилию", text: $surname)
+          TextField("Введите фамилию", text: $viewModel.registrationData.surname)
             .textFieldStyle(RoundedBorderTextFieldStyle())
+            .autocorrectionDisabled(true)
           
           // Slot patronymic
           HStack{
@@ -112,8 +105,9 @@ struct RegistrationView: View {
           }
           .padding(.top, 5)
           
-          TextField("Введите отчество", text: $patronymic)
+          TextField("Введите отчество", text: $viewModel.registrationData.patronymic)
             .textFieldStyle(RoundedBorderTextFieldStyle())
+            .autocorrectionDisabled(true)
           
           // Slot faculty
           HStack{
@@ -122,8 +116,9 @@ struct RegistrationView: View {
           }
           .padding(.top, 5)
           
-          TextField("Введите факультет", text: $faculty)
+          TextField("Введите факультет", text: $viewModel.registrationData.faculty)
             .textFieldStyle(RoundedBorderTextFieldStyle())
+            .autocorrectionDisabled(true)
           
           // Slot group
           HStack{
@@ -132,8 +127,9 @@ struct RegistrationView: View {
           }
           .padding(.top, 5)
           
-          TextField("Введите группу", text: $group)
+          TextField("Введите группу", text: $viewModel.registrationData.group)
             .textFieldStyle(RoundedBorderTextFieldStyle())
+            .autocorrectionDisabled(true)
           
           // Slot mail
           HStack{
@@ -142,8 +138,9 @@ struct RegistrationView: View {
           }
           .padding(.top, 5)
           
-          TextField("Введите Email", text: $mail)
+          TextField("Введите Email", text: $viewModel.registrationData.mail)
             .textFieldStyle(RoundedBorderTextFieldStyle())
+            .autocorrectionDisabled(true)
           
           // Slot phone
           HStack{
@@ -152,8 +149,9 @@ struct RegistrationView: View {
           }
           .padding(.top, 5)
           
-          TextField("Введите телефон", text: $phone)
+          TextField("Введите телефон", text: $viewModel.registrationData.phone)
             .textFieldStyle(RoundedBorderTextFieldStyle())
+            .autocorrectionDisabled(true)
           
           // Slot password
           HStack{
@@ -162,7 +160,7 @@ struct RegistrationView: View {
           }
           .padding(.top, 5)
           
-          SecureField("Введите пароль", text: $password)
+          SecureField("Введите пароль", text: $viewModel.registrationData.password)
             .textFieldStyle(RoundedBorderTextFieldStyle())
           
           // Slot repeat password
@@ -172,21 +170,19 @@ struct RegistrationView: View {
           }
           .padding(.top, 5)
           
-          SecureField("Введите пароль", text: $passwordRepeat)
+          SecureField("Введите пароль", text: $viewModel.passwordRepeat)
             .textFieldStyle(RoundedBorderTextFieldStyle())
           
           // Registration button
           Button(action: {
-            // Действие, которое нужно выполнить при нажатии на кнопку
+            viewModel.registration()
           }) {
             Text("Регистрация")
               .font(.system(size: 30))
               .foregroundColor(.white)
               .bold()
           }
-          .frame(width: 373, height: 50)
-          .background(Color.scarlet)
-          .clipShape(RoundedRectangle(cornerRadius: 15))
+          .buttonStyle(SRButton())
           .padding(.top, 25)
           .padding(.bottom, 50)
           

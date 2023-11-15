@@ -10,10 +10,10 @@ import SwiftUI
 
 struct InputView: View {
   
-  @State var mail = ""
-  @State var password = ""
+  @StateObject var viewModel = InputViewModel()
   
   var body: some View {
+    
     NavigationView {
       VStack {
         
@@ -44,6 +44,12 @@ struct InputView: View {
           }
           .padding(.top, 50)
           
+          // Error Message
+          if !viewModel.errorMessage.isEmpty {
+            Text(viewModel.errorMessage)
+              .foregroundColor(.blue)
+          }
+          
           // Slot Email
           VStack {
             HStack{
@@ -52,8 +58,9 @@ struct InputView: View {
             }
             .padding(.top, 5)
             
-            TextField("Введите Email", text: $mail)
+            TextField("Введите Email", text: $viewModel.loginDate.mail)
               .textFieldStyle(RoundedBorderTextFieldStyle())
+              .autocorrectionDisabled(true)
             
             // Slot password
             HStack{
@@ -62,7 +69,7 @@ struct InputView: View {
             }
             .padding(.top, 5)
             
-            SecureField("Введите пароль", text: $password)
+            SecureField("Введите пароль", text: $viewModel.loginDate.password)
               .textFieldStyle(RoundedBorderTextFieldStyle())
             
           }
@@ -78,16 +85,14 @@ struct InputView: View {
         // Login button
         VStack {
           Button(action: {
-            // Действие, которое нужно выполнить при нажатии на кнопку
+            viewModel.login()
           }) {
             Text("Войти")
               .font(.system(size: 30))
               .foregroundColor(.white)
               .bold()
           }
-          .frame(width: 373, height: 50)
-          .background(Color.scarlet)
-          .clipShape(RoundedRectangle(cornerRadius: 15))
+          .buttonStyle(SRButton())
           
           Spacer()
         }

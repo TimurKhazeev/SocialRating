@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-struct SRButton: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct SRButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .frame(width: 373, height: 50)
+            .background(Color.scarlet)
+            .clipShape(RoundedRectangle(cornerRadius: 15))
+            .contentShape(Rectangle())
     }
 }
 
-#Preview {
-    SRButton()
-}
