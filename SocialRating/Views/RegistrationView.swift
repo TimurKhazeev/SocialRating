@@ -60,7 +60,7 @@ struct RegistrationView: View {
                 .foregroundColor(viewModel.selectedRole == .student ? Color.scarlet : Color.gray)
               
               Text("Студент")
-                .foregroundColor(viewModel.selectedRole == .student ? Color.black : Color.gray)
+                .foregroundColor(viewModel.selectedRole == .student ? Color.myBlackWhite : Color.gray)
             }
             .padding()
             
@@ -71,7 +71,7 @@ struct RegistrationView: View {
                 .foregroundColor(viewModel.selectedRole == .teacher ? Color.scarlet : Color.gray)
               
               Text("Преподаватель")
-                .foregroundColor(viewModel.selectedRole == .teacher ? Color.black : Color.gray)
+                .foregroundColor(viewModel.selectedRole == .teacher ? Color.myBlackWhite : Color.gray)
             }
             .padding()
           }
@@ -121,15 +121,17 @@ struct RegistrationView: View {
             .autocorrectionDisabled(true)
           
           // Slot group
-          HStack{
-            Text("Группа")
-            Spacer()
-          }
-          .padding(.top, 5)
-          
-          TextField("Введите группу", text: $viewModel.registrationData.group)
-            .textFieldStyle(RoundedBorderTextFieldStyle())
-            .autocorrectionDisabled(true)
+          if viewModel.selectedRole == .student {
+            HStack{
+              Text("Группа")
+              Spacer()
+            }
+            .padding(.top, 5)
+            
+            TextField("Введите группу", text: $viewModel.registrationData.group)
+              .textFieldStyle(RoundedBorderTextFieldStyle())
+              .autocorrectionDisabled(true)
+          } 
           
           // Slot mail
           HStack{

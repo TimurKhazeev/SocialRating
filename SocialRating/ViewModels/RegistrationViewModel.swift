@@ -43,11 +43,20 @@ class RegistrationViewModel: ObservableObject {
   
   private func validate() -> Bool {
     errorMessage = ""
+    
+    if selectedRole == .student{
+      guard !registrationData.group.trimmingCharacters(in: .whitespaces).isEmpty else {
+        errorMessage = "Пожалуйста заполните все поля."
+        return false
+      }
+    } else {
+      registrationData.group = ""
+    }
+    
     guard !registrationData.name.trimmingCharacters(in: .whitespaces).isEmpty,
           !registrationData.surname.trimmingCharacters(in: .whitespaces).isEmpty,
           !registrationData.patronymic.trimmingCharacters(in: .whitespaces).isEmpty,
           !registrationData.faculty.trimmingCharacters(in: .whitespaces).isEmpty,
-          !registrationData.group.trimmingCharacters(in: .whitespaces).isEmpty,
           !registrationData.mail.trimmingCharacters(in: .whitespaces).isEmpty,
           !registrationData.phone.trimmingCharacters(in: .whitespaces).isEmpty,
           !registrationData.password.trimmingCharacters(in: .whitespaces).isEmpty,
