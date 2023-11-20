@@ -88,7 +88,7 @@ struct InputView: View {
             viewModel.login()
           }) {
             Text("Войти")
-              .font(.system(size: 30))
+              .font(.system(size: 26))
               .foregroundColor(.white)
               .bold()
           }

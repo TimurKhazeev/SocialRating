@@ -33,12 +33,12 @@ class InputViewModel: ObservableObject {
     errorMessage = ""
     guard !loginDate.mail.trimmingCharacters(in: .whitespaces).isEmpty,
           !loginDate.password.trimmingCharacters(in: .whitespaces).isEmpty else {
-      errorMessage = "Пожалуйста заполните все поля."
+      errorMessage = "Пожалуйста заполните все поля"
       return false
     }
     
     guard loginDate.mail.contains("@") && loginDate.mail.contains(".") else {
-      errorMessage = "Пожалуйста введите корректный Email."
+      errorMessage = "Пожалуйста введите корректный Email"
       return false
     }
     

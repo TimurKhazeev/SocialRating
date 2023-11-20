@@ -46,7 +46,7 @@ class RegistrationViewModel: ObservableObject {
     
     if selectedRole == .student{
       guard !registrationData.group.trimmingCharacters(in: .whitespaces).isEmpty else {
-        errorMessage = "Пожалуйста заполните все поля."
+        errorMessage = "Пожалуйста заполните все поля"
         return false
       }
     } else {
@@ -61,22 +61,22 @@ class RegistrationViewModel: ObservableObject {
           !registrationData.phone.trimmingCharacters(in: .whitespaces).isEmpty,
           !registrationData.password.trimmingCharacters(in: .whitespaces).isEmpty,
           !passwordRepeat.trimmingCharacters(in: .whitespaces).isEmpty else {
-      errorMessage = "Пожалуйста заполните все поля."
+      errorMessage = "Пожалуйста заполните все поля"
       return false
     }
     
     guard registrationData.mail.contains("@") && registrationData.mail.contains(".") else {
-      errorMessage = "Пожалуйста введите корректный Email."
+      errorMessage = "Пожалуйста введите корректный Email"
       return false
     }
     
     guard registrationData.password.count >= 8 else {
-      errorMessage = "Пароль должен быть не короче 8 символов."
+      errorMessage = "Пароль должен быть не короче 8 символов"
       return false
     }
     
     guard registrationData.password == passwordRepeat else {
-      errorMessage = "Пожалуйста введите идентичные пароли."
+      errorMessage = "Пожалуйста введите идентичные пароли"
       return false
     }
     
