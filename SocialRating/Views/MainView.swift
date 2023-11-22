@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct MainView: View {
+  
+  @StateObject var viewModel = MainViewModel()
+  
     var body: some View {
+    
+      if viewModel.isSignedId, !viewModel.currentUserId.isEmpty {
+        if viewModel.userRole == "teacher" {
+          MasterTeacherView()
+        } else {
+          MasterStudentView()
+        }
+      } else {
         InputView()
+      }
+        
     }
 }
 

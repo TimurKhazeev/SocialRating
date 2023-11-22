@@ -86,7 +86,7 @@ struct RegistrationView: View {
         .padding(.top, 10)
         
         
-        TextField("Введите имя", text: $viewModel.registrationData.name)
+        TextField("Введите имя", text: $viewModel.name)
           .textFieldStyle(RoundedBorderTextFieldStyle())
           .autocorrectionDisabled(true)
           
@@ -97,7 +97,7 @@ struct RegistrationView: View {
         }
         .padding(.top, 15)
         
-        TextField("Введите фамилию", text: $viewModel.registrationData.surname)
+        TextField("Введите фамилию", text: $viewModel.surname)
           .textFieldStyle(RoundedBorderTextFieldStyle())
           .autocorrectionDisabled(true)
         
@@ -108,7 +108,7 @@ struct RegistrationView: View {
         }
         .padding(.top, 15)
         
-        TextField("Введите отчество", text: $viewModel.registrationData.patronymic)
+        TextField("Введите отчество", text: $viewModel.patronymic)
           .textFieldStyle(RoundedBorderTextFieldStyle())
           .autocorrectionDisabled(true)
         
@@ -119,7 +119,7 @@ struct RegistrationView: View {
         }
         .padding(.top, 15)
         
-        TextField("Введите факультет", text: $viewModel.registrationData.faculty)
+        TextField("Введите факультет", text: $viewModel.faculty)
           .textFieldStyle(RoundedBorderTextFieldStyle())
           .autocorrectionDisabled(true)
         
@@ -131,7 +131,7 @@ struct RegistrationView: View {
           }
           .padding(.top, 15)
           
-          TextField("Введите группу", text: $viewModel.registrationData.group)
+          TextField("Введите группу", text: $viewModel.group)
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .autocorrectionDisabled(true)
         }
@@ -143,7 +143,7 @@ struct RegistrationView: View {
         }
         .padding(.top, 15)
         
-        TextField("Введите Email", text: $viewModel.registrationData.mail)
+        TextField("Введите Email", text: $viewModel.mail)
           .textFieldStyle(RoundedBorderTextFieldStyle())
           .autocorrectionDisabled(true)
         
@@ -154,7 +154,7 @@ struct RegistrationView: View {
         }
         .padding(.top, 15)
         
-        TextField("Введите телефон", text: $viewModel.registrationData.phone)
+        TextField("Введите телефон", text: $viewModel.phone)
           .textFieldStyle(RoundedBorderTextFieldStyle())
           .autocorrectionDisabled(true)
         
@@ -165,7 +165,7 @@ struct RegistrationView: View {
         }
         .padding(.top, 15)
         
-        SecureField("Введите пароль", text: $viewModel.registrationData.password)
+        SecureField("Введите пароль", text: $viewModel.password)
           .textFieldStyle(RoundedBorderTextFieldStyle())
         
         // Slot repeat password
@@ -183,11 +183,11 @@ struct RegistrationView: View {
           viewModel.registration()
         }) {
           Text("Регистрация")
-            .font(.system(size: 30))
+            .font(.system(size: 26))
             .foregroundColor(.white)
             .bold()
         }
-        .buttonStyle(SRButton())
+        .buttonStyle(SRButtonStyle())
         .padding(.top, 25)
         .padding(.bottom, 50)
         

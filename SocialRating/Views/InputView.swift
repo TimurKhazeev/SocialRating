@@ -58,7 +58,7 @@ struct InputView: View {
             }
             .padding(.top, 5)
             
-            TextField("Введите Email", text: $viewModel.loginDate.mail)
+            TextField("Введите Email", text: $viewModel.mail)
               .textFieldStyle(RoundedBorderTextFieldStyle())
               .autocorrectionDisabled(true)
             
@@ -69,7 +69,7 @@ struct InputView: View {
             }
             .padding(.top, 5)
             
-            SecureField("Введите пароль", text: $viewModel.loginDate.password)
+            SecureField("Введите пароль", text: $viewModel.password)
               .textFieldStyle(RoundedBorderTextFieldStyle())
             
           }
@@ -92,7 +92,7 @@ struct InputView: View {
               .foregroundColor(.white)
               .bold()
           }
-          .buttonStyle(SRButton())
+          .buttonStyle(SRButtonStyle())
           
           Spacer()
         }

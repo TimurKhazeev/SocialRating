@@ -6,13 +6,18 @@
 //
 
 import SwiftUI
+import FirebaseCore
 
 @main
 struct SocialRatingApp: App {
+  
+  init() {
+    FirebaseApp.configure()
+  }
+  
     var body: some Scene {
         WindowGroup {
           ScreensaverView()
-//          MainView()
         }
     }
 }

@@ -8,7 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		2F2C8EC62B016B1700312B9B /* PasswordRecoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2C8EC52B016B1600312B9B /* PasswordRecoveryView.swift */; };
-		2F3951862B0575C100F186EC /* SRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3951852B0575C100F186EC /* SRButton.swift */; };
+		2F3951862B0575C100F186EC /* SRButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3951852B0575C100F186EC /* SRButtonStyle.swift */; };
+		2F6F59002B0D495E00647398 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F58FF2B0D495E00647398 /* Extensions.swift */; };
+		2F9FB7D52B0BFE44005C6716 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F9FB7D42B0BFE44005C6716 /* GoogleService-Info.plist */; };
+		2F9FB7D82B0BFFF3005C6716 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 2F9FB7D72B0BFFF3005C6716 /* FirebaseAnalytics */; };
+		2F9FB7DA2B0BFFF3005C6716 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2F9FB7D92B0BFFF3005C6716 /* FirebaseAuth */; };
+		2F9FB7DC2B0BFFF3005C6716 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2F9FB7DB2B0BFFF3005C6716 /* FirebaseFirestore */; };
+		2F9FB7DE2B0BFFF3005C6716 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2F9FB7DD2B0BFFF3005C6716 /* FirebaseFirestoreSwift */; };
 		2FF8E4CA2AFFB0890055B7AA /* SocialRatingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF8E4C92AFFB0890055B7AA /* SocialRatingApp.swift */; };
 		2FF8E4CC2AFFB0890055B7AA /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF8E4CB2AFFB0890055B7AA /* MainView.swift */; };
 		2FF8E4CE2AFFB08B0055B7AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FF8E4CD2AFFB08B0055B7AA /* Assets.xcassets */; };
@@ -27,8 +33,7 @@
 		2FF8E5082AFFE4AB0055B7AA /* SearchStudentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF8E5072AFFE4AB0055B7AA /* SearchStudentsView.swift */; };
 		2FF8E50A2AFFE4F40055B7AA /* StudentsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF8E5092AFFE4F40055B7AA /* StudentsPageView.swift */; };
 		2FF8E50C2AFFE5360055B7AA /* TransferPointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF8E50B2AFFE5360055B7AA /* TransferPointsView.swift */; };
-		2FF8E50E2AFFE7850055B7AA /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF8E50D2AFFE7850055B7AA /* Student.swift */; };
-		2FF8E5102AFFE7A40055B7AA /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF8E50F2AFFE7A40055B7AA /* Teacher.swift */; };
+		2FF8E50E2AFFE7850055B7AA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF8E50D2AFFE7850055B7AA /* User.swift */; };
 		2FF8E5122AFFE80E0055B7AA /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF8E5112AFFE80E0055B7AA /* MainViewModel.swift */; };
 		2FF8E5142AFFE8240055B7AA /* InputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF8E5132AFFE8240055B7AA /* InputViewModel.swift */; };
 		2FF8E5162AFFE8360055B7AA /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF8E5152AFFE8360055B7AA /* RegistrationViewModel.swift */; };
@@ -63,7 +68,9 @@
 
 /* Begin PBXFileReference section */
 		2F2C8EC52B016B1600312B9B /* PasswordRecoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryView.swift; sourceTree = "<group>"; };
-		2F3951852B0575C100F186EC /* SRButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRButton.swift; sourceTree = "<group>"; };
+		2F3951852B0575C100F186EC /* SRButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRButtonStyle.swift; sourceTree = "<group>"; };
+		2F6F58FF2B0D495E00647398 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2F9FB7D42B0BFE44005C6716 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2FF8E4C62AFFB0890055B7AA /* SocialRating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialRating.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FF8E4C92AFFB0890055B7AA /* SocialRatingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialRatingApp.swift; sourceTree = "<group>"; };
 		2FF8E4CB2AFFB0890055B7AA /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -85,8 +92,7 @@
 		2FF8E5072AFFE4AB0055B7AA /* SearchStudentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStudentsView.swift; sourceTree = "<group>"; };
 		2FF8E5092AFFE4F40055B7AA /* StudentsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsPageView.swift; sourceTree = "<group>"; };
 		2FF8E50B2AFFE5360055B7AA /* TransferPointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferPointsView.swift; sourceTree = "<group>"; };
-		2FF8E50D2AFFE7850055B7AA /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
-		2FF8E50F2AFFE7A40055B7AA /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
+		2FF8E50D2AFFE7850055B7AA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2FF8E5112AFFE80E0055B7AA /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		2FF8E5132AFFE8240055B7AA /* InputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewModel.swift; sourceTree = "<group>"; };
 		2FF8E5152AFFE8360055B7AA /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
@@ -107,6 +113,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F9FB7D82B0BFFF3005C6716 /* FirebaseAnalytics in Frameworks */,
+				2F9FB7DA2B0BFFF3005C6716 /* FirebaseAuth in Frameworks */,
+				2F9FB7DC2B0BFFF3005C6716 /* FirebaseFirestore in Frameworks */,
+				2F9FB7DE2B0BFFF3005C6716 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +199,8 @@
 			children = (
 				2FF8E4C92AFFB0890055B7AA /* SocialRatingApp.swift */,
 				2FF8E4CD2AFFB08B0055B7AA /* Assets.xcassets */,
+				2F9FB7D42B0BFE44005C6716 /* GoogleService-Info.plist */,
+				2F6F58FF2B0D495E00647398 /* Extensions.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -196,8 +208,7 @@
 		2FF8E4F42AFFD2A80055B7AA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2FF8E50D2AFFE7850055B7AA /* Student.swift */,
-				2FF8E50F2AFFE7A40055B7AA /* Teacher.swift */,
+				2FF8E50D2AFFE7850055B7AA /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -238,7 +249,7 @@
 				2FF8E5072AFFE4AB0055B7AA /* SearchStudentsView.swift */,
 				2FF8E5092AFFE4F40055B7AA /* StudentsPageView.swift */,
 				2FF8E50B2AFFE5360055B7AA /* TransferPointsView.swift */,
-				2F3951852B0575C100F186EC /* SRButton.swift */,
+				2F3951852B0575C100F186EC /* SRButtonStyle.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -259,6 +270,12 @@
 			dependencies = (
 			);
 			name = SocialRating;
+			packageProductDependencies = (
+				2F9FB7D72B0BFFF3005C6716 /* FirebaseAnalytics */,
+				2F9FB7D92B0BFFF3005C6716 /* FirebaseAuth */,
+				2F9FB7DB2B0BFFF3005C6716 /* FirebaseFirestore */,
+				2F9FB7DD2B0BFFF3005C6716 /* FirebaseFirestoreSwift */,
+			);
 			productName = SocialRating;
 			productReference = 2FF8E4C62AFFB0890055B7AA /* SocialRating.app */;
 			productType = "com.apple.product-type.application";
@@ -331,6 +348,9 @@
 				Base,
 			);
 			mainGroup = 2FF8E4BD2AFFB0890055B7AA;
+			packageReferences = (
+				2F9FB7D62B0BFFF3005C6716 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 2FF8E4C72AFFB0890055B7AA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -349,6 +369,7 @@
 			files = (
 				2FF8E4D12AFFB08B0055B7AA /* Preview Assets.xcassets in Resources */,
 				2FF8E4CE2AFFB08B0055B7AA /* Assets.xcassets in Resources */,
+				2F9FB7D52B0BFE44005C6716 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,13 +396,12 @@
 			files = (
 				2FF8E5022AFFE3C90055B7AA /* ProfileView.swift in Sources */,
 				2FF8E5162AFFE8360055B7AA /* RegistrationViewModel.swift in Sources */,
-				2F3951862B0575C100F186EC /* SRButton.swift in Sources */,
+				2F3951862B0575C100F186EC /* SRButtonStyle.swift in Sources */,
 				2FF8E4FC2AFFE2D30055B7AA /* MasterStudentView.swift in Sources */,
 				2FF8E4F82AFFE1DD0055B7AA /* InputView.swift in Sources */,
 				2FF8E5042AFFE3DE0055B7AA /* ProfileChangesView.swift in Sources */,
 				2FF8E4CC2AFFB0890055B7AA /* MainView.swift in Sources */,
-				2FF8E50E2AFFE7850055B7AA /* Student.swift in Sources */,
-				2FF8E5102AFFE7A40055B7AA /* Teacher.swift in Sources */,
+				2FF8E50E2AFFE7850055B7AA /* User.swift in Sources */,
 				2FF8E4FE2AFFE3270055B7AA /* MasterTeacherView.swift in Sources */,
 				2FF8E50C2AFFE5360055B7AA /* TransferPointsView.swift in Sources */,
 				2FF8E5202AFFF7E10055B7AA /* ListDisciplinesViewModels.swift in Sources */,
@@ -392,6 +412,7 @@
 				2FF8E51C2AFFF7A80055B7AA /* HistoryOperationsViewModel.swift in Sources */,
 				2FF8E5182AFFE84B0055B7AA /* MasterStudentViewModel.swift in Sources */,
 				2FF8E5282AFFF85E0055B7AA /* ProfileChangesViewModels.swift in Sources */,
+				2F6F59002B0D495E00647398 /* Extensions.swift in Sources */,
 				2FF8E5222AFFF7F30055B7AA /* SearchStudentsViewModels.swift in Sources */,
 				2FF8E5142AFFE8240055B7AA /* InputViewModel.swift in Sources */,
 				2F2C8EC62B016B1700312B9B /* PasswordRecoveryView.swift in Sources */,
@@ -732,6 +753,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2F9FB7D62B0BFFF3005C6716 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.18.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2F9FB7D72B0BFFF3005C6716 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F9FB7D62B0BFFF3005C6716 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		2F9FB7D92B0BFFF3005C6716 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F9FB7D62B0BFFF3005C6716 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		2F9FB7DB2B0BFFF3005C6716 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F9FB7D62B0BFFF3005C6716 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		2F9FB7DD2B0BFFF3005C6716 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F9FB7D62B0BFFF3005C6716 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2FF8E4BE2AFFB0890055B7AA /* Project object */;
 }

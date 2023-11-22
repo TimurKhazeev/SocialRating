@@ -7,21 +7,19 @@
 // Логика страницы регистрации
 
 import Foundation
+import FirebaseAuth
+import FirebaseFirestore
 
 class RegistrationViewModel: ObservableObject {
   
-  struct RegistrationData: Codable {
-    var name = ""
-    var surname = ""
-    var patronymic = ""
-    var faculty = ""
-    var group = ""
-    var mail = ""
-    var phone = ""
-    var password = ""
-  }
-  
-  @Published var registrationData = RegistrationData()
+  @Published var name = ""
+  @Published var surname = ""
+  @Published var patronymic = ""
+  @Published var faculty = ""
+  @Published var group = ""
+  @Published var mail = ""
+  @Published var phone = ""
+  @Published var password = ""
   @Published var passwordRepeat = ""
   @Published public var selectedRole: Role = .student
   @Published var errorMessage = ""
@@ -39,43 +37,91 @@ class RegistrationViewModel: ObservableObject {
     }
     
     // Отправка запроса на апи для регистрации
+    Auth.auth().createUser(withEmail: mail, password: password) {
+      [weak self]  result, error in
+      guard let userID = result?.user.uid else {
+        return
+      }
+      
+      self?.inertUserRecord(id: userID)
+    }
   }
   
+  private func inertUserRecord(id: String) {
+    if selectedRole == .student {
+      let newUser = User(id: id,
+                            role: "student",
+                            name: name,
+                            surname: surname,
+                            patronymic: patronymic,
+                            faculty: faculty,
+                            group: group,
+                            mail: mail,
+                            phone: phone,
+                            points: 0)
+      
+      let db = Firestore.firestore()
+      
+      db.collection("users")
+        .document(id)
+        .setData(newUser.asDictionary())
+      
+    } else {
+      let newUser = User(id: id,
+                         role: "teacher",
+                         name: name,
+                         surname: surname,
+                         patronymic: patronymic,
+                         faculty: faculty,
+                         group: "-",
+                         mail: mail,
+                         phone: phone,
+                         points: 0)
+      
+      let db = Firestore.firestore()
+      
+      db.collection("users")
+        .document(id)
+        .setData(newUser.asDictionary())
+    }
+  }
+  
+  // Функция проверки на коректность ввода данных
   private func validate() -> Bool {
     errorMessage = ""
     
     if selectedRole == .student{
-      guard !registrationData.group.trimmingCharacters(in: .whitespaces).isEmpty else {
+      guard !group.trimmingCharacters(in: .whitespaces).isEmpty else {
         errorMessage = "Пожалуйста заполните все поля"
         return false
       }
     } else {
-      registrationData.group = ""
+      group = ""
     }
     
-    guard !registrationData.name.trimmingCharacters(in: .whitespaces).isEmpty,
-          !registrationData.surname.trimmingCharacters(in: .whitespaces).isEmpty,
-          !registrationData.patronymic.trimmingCharacters(in: .whitespaces).isEmpty,
-          !registrationData.faculty.trimmingCharacters(in: .whitespaces).isEmpty,
-          !registrationData.mail.trimmingCharacters(in: .whitespaces).isEmpty,
-          !registrationData.phone.trimmingCharacters(in: .whitespaces).isEmpty,
-          !registrationData.password.trimmingCharacters(in: .whitespaces).isEmpty,
+    guard !name.trimmingCharacters(in: .whitespaces).isEmpty,
+          !surname.trimmingCharacters(in: .whitespaces).isEmpty,
+          !patronymic.trimmingCharacters(in: .whitespaces).isEmpty,
+          !faculty.trimmingCharacters(in: .whitespaces).isEmpty,
+          !mail.trimmingCharacters(in: .whitespaces).isEmpty,
+          !phone.trimmingCharacters(in: .whitespaces).isEmpty,
+          !password.trimmingCharacters(in: .whitespaces).isEmpty,
           !passwordRepeat.trimmingCharacters(in: .whitespaces).isEmpty else {
       errorMessage = "Пожалуйста заполните все поля"
       return false
     }
     
-    guard registrationData.mail.contains("@") && registrationData.mail.contains(".") else {
+    guard mail.contains("@") && mail.contains(".") else {
       errorMessage = "Пожалуйста введите корректный Email"
       return false
     }
     
-    guard registrationData.password.count >= 8 else {
+    guard password.count >= 8 else {
       errorMessage = "Пароль должен быть не короче 8 символов"
       return false
     }
     
-    guard registrationData.password == passwordRepeat else {
+    guard password == passwordRepeat else {
       errorMessage = "Пожалуйста введите идентичные пароли"
       return false
     }

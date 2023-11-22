@@ -7,16 +7,13 @@
 // Логика страницы входа
 
 import Foundation
+import FirebaseAuth
 import SwiftUI
 
 class InputViewModel: ObservableObject {
   
-  class LoginDate: Codable{
-    var mail = ""
-    var password = ""
-  }
-  
-  @Published var loginDate = LoginDate()
+  @Published var mail = ""
+  @Published var password = ""
   @Published var errorMessage = ""
   
   init() {}
@@ -27,17 +24,18 @@ class InputViewModel: ObservableObject {
     }
     
     // Отправка запроса на апи для входа
+    Auth.auth().signIn(withEmail: mail, password: password)
   }
   
   private func validate() -> Bool {
     errorMessage = ""
-    guard !loginDate.mail.trimmingCharacters(in: .whitespaces).isEmpty,
-          !loginDate.password.trimmingCharacters(in: .whitespaces).isEmpty else {
+    guard !mail.trimmingCharacters(in: .whitespaces).isEmpty,
+          !password.trimmingCharacters(in: .whitespaces).isEmpty else {
       errorMessage = "Пожалуйста заполните все поля"
       return false
     }
     
-    guard loginDate.mail.contains("@") && loginDate.mail.contains(".") else {
+    guard mail.contains("@") && mail.contains(".") else {
       errorMessage = "Пожалуйста введите корректный Email"
       return false
     }

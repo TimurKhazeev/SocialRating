@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SRButton: ButtonStyle {
+struct SRButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .frame(width: 373, height: 50)
